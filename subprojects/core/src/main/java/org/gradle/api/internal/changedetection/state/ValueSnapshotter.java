@@ -163,7 +163,7 @@ public class ValueSnapshotter implements IsolatableFactory {
         }
         if (value instanceof Provider) {
             Provider<?> provider = (Provider) value;
-            ValueSnapshot valueSnapshot = strategy.snapshot(provider.get());
+            ValueSnapshot valueSnapshot = strategy.snapshot(provider.getOrNull());
             return new ProviderSnapshot(valueSnapshot);
         }
         if (value instanceof NamedObjectInstantiator.Managed) {

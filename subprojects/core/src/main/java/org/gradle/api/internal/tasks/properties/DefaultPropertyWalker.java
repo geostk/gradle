@@ -25,7 +25,6 @@ import org.gradle.api.NonNullApi;
 import org.gradle.api.internal.tasks.PropertySpecFactory;
 import org.gradle.api.internal.tasks.TaskValidationContext;
 import org.gradle.api.internal.tasks.ValidationAction;
-import org.gradle.api.provider.Provider;
 import org.gradle.api.tasks.Optional;
 import org.gradle.internal.Factory;
 import org.gradle.internal.UncheckedException;
@@ -95,7 +94,7 @@ public class DefaultPropertyWalker implements PropertyWalker {
                         }
                     }
                 });
-                return value instanceof Provider ? ((Provider<?>) value).getOrNull() : value;
+                return value;
             }
         });
 
